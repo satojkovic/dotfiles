@@ -1,0 +1,11 @@
+[user]
+	name = satojkovic
+	email = satojkovic@gmail.com
+[github]
+	user = satojkovic
+[color]
+	ui = true
+[alias]
+	st = status
+	df = diff
+	cm = commit -m
