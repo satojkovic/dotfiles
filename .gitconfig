@@ -13,3 +13,4 @@
 	ll = log --stat --abbrev-commit
 [core]
 	pager = less
+	excludesfile = /Users/satojkovic/.gitignore
