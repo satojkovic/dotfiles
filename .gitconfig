@@ -11,6 +11,8 @@
 	cm = commit -m
 	l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s%C(white)- %an, %ar%Creset'
 	ll = log --stat --abbrev-commit
+	br = branch
+	co = checkout
 [core]
 	pager = less
 	excludesfile = /Users/satojkovic/.gitignore
