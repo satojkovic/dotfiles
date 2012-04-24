@@ -7,6 +7,14 @@ if [ -f "$HOME/.git-completion.sh" ]; then
 fi
 
 if [ `uname` = "Darwin" ]; then
+	export JAVA_HOME=`/usr/libexec/java_home`
+	export PATH=$JAVA_HOME/bin:$PATH
+	export HADOOP_HOME=/usr/local/hadoop
+	export PATH=$HADOOP_HOME/bin:$PATH
+	export MAVEN_HOME=/usr/local/maven
+	export PATH=$MAVEN_HOME/bin:$PATH
+	export MAHOUT_HOME=/usr/local/mahout
+	export PATH=$MAHOUT_HOME/bin:$PATH
 	alias em='open -a /Applications/Emacs.app/Contents/MacOS/Emacs'
 	alias ls='ls -G -B -w -v'
 elif [ `uname` = "Linux" ]; then
