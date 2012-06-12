@@ -20,6 +20,7 @@
 	cll = config --local --list
 	spull = svn rebase
 	spush = svn dcommit
+	bc = bundle create
 [core]
 	excludesfile = /Users/satojkovic/.gitignore
 	pager = less
