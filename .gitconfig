@@ -21,6 +21,7 @@
 	spull = svn rebase
 	spush = svn dcommit
 	bc = bundle create
+	lsr = ls-remote
 [core]
 	excludesfile = /Users/satojkovic/.gitignore
 	pager = less
