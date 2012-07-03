@@ -41,3 +41,5 @@ fi
 if [ -d "$HOME/.pythonbrew" ]; then
 	source /Users/satojkovic/.pythonbrew/etc/bashrc
 fi
+
+export HISTSIZE=300000
