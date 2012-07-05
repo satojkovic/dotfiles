@@ -22,3 +22,8 @@ GTAGS
 
 # Bin files
 Bin/
+
+# Visual Studio
+*.ncb
+*.suo
+*.user
