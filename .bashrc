@@ -6,6 +6,11 @@ if [ -f "$HOME/.git-completion.sh" ]; then
 ]\n\$ '
 fi
 
+if [ -f "$HOME/.hub.bash_completion.sh" ]; then
+    source ~/.hub.bash_completion.sh
+    alias git="hub"
+fi
+
 if [ `uname` = "Darwin" ]; then
 	export JAVA_HOME=`/usr/libexec/java_home`
 	export PATH=$JAVA_HOME/bin:$PATH
