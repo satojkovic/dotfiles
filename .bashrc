@@ -47,4 +47,11 @@ if [ -d "$HOME/.pythonbrew" ]; then
 	source /Users/satojkovic/.pythonbrew/etc/bashrc
 fi
 
+alias rm="rm -i"
+alias mv="mv -i"
+alias cp="cp -i"
+alias ll="ls -l"
+alias la="ls -a"
+alias lal="ls -al"
+
 export HISTSIZE=300000
