@@ -3,6 +3,7 @@
 ;;
 (setq load-path
       (append '("~/.emacs.d/site-lisp")
+              '("/usr/local/share/emacs/site-lisp")
 	      load-path))
 
 ;;
