@@ -20,9 +20,6 @@ GPATH
 GRTAGS
 GTAGS
 
-# Bin files
-Bin/
-
 # Visual Studio
 *.ncb
 *.suo
