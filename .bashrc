@@ -26,9 +26,6 @@ else
 	alias ls='ls --color -F'
 fi
 
-alias pod=perldoc
-complete -C perldoc-complete -o nospace -o default perldoc
-
 if [ -d "$HOME/.nvm" ]; then
 	source ~/.nvm/nvm.sh
 	nvm use "v0.4.1"
@@ -53,5 +50,10 @@ alias cp="cp -i"
 alias ll="ls -l"
 alias la="ls -a"
 alias lal="ls -al"
+alias pod=perldoc
+complete -C perldoc-complete -o nospace -o default perldoc
+if [ `uname` = 'CYGWIN_NT-5.1' ]; then
+	alias cs=cygstart.exe
+fi
 
 export HISTSIZE=300000
