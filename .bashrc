@@ -22,7 +22,7 @@ if [ `uname` = "Darwin" ]; then
 	export PATH=$MAHOUT_HOME/bin:$PATH
 	alias em='open -a /Applications/Emacs.app/Contents/MacOS/Emacs'
 	alias ls='ls -G -B -w -v'
-elif [ `uname` = "Linux" ]; then
+else
 	alias ls='ls --color -F'
 fi
 
