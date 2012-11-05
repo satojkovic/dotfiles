@@ -22,6 +22,7 @@
 	spush = svn dcommit
 	bc = bundle create
 	lsr = ls-remote
+	rv = remote -v
 [core]
 	excludesfile = /Users/satojkovic/.gitignore
 	pager = less
