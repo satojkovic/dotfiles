@@ -26,3 +26,5 @@
 [core]
 	excludesfile = /Users/satojkovic/.gitignore
 	pager = less
+[merge]
+	ff = false
