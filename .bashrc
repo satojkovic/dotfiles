@@ -44,6 +44,7 @@ if [ -d "$HOME/.pythonbrew" ]; then
 	source /Users/satojkovic/.pythonbrew/etc/bashrc
 fi
 
+alias g="git"
 alias rm="rm -i"
 alias mv="mv -i"
 alias cp="cp -i"
