@@ -23,6 +23,7 @@
 	bc = bundle create
 	lsr = ls-remote
 	rv = remote -v
+	ls = ls-files
 [core]
 	excludesfile = /Users/satojkovic/.gitignore
 	pager = less
