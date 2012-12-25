@@ -131,3 +131,9 @@
          (local-set-key "\C-t" 'gtags-pop-stack)
          ))
 
+;; succor.el
+(require 'succor)
+(setq *succor-directory* "~/.succor/")
+(setq succor-gtags-enable t)
+(setq succor-imenu-enable t)
+
