@@ -24,8 +24,11 @@
 	lsr = ls-remote
 	rv = remote -v
 	ls = ls-files
+	ra = remote add
 [core]
 	excludesfile = /Users/satojkovic/.gitignore
 	pager = less
 [merge]
 	ff = false
+[push]
+	default = simple
