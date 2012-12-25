@@ -117,3 +117,7 @@
 
 ;; auto-install
 (require 'auto-install)
+
+;; anything
+;(require 'anything)
+
