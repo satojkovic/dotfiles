@@ -115,3 +115,5 @@
 ;; magit
 (require 'magit)
 
+;; auto-install
+(require 'auto-install)
