@@ -1,8 +1,8 @@
 set bell-style none
 
 if [ -f "$HOME/.git-completion.sh" ]; then
-	source ~/.git-completion.sh
-	PS1='\[\033[0;37m\][\[\033[0;32m\]\t \[\033[1;36m\]\u\[\033[0;37m\]@\h \[\033[0;32m\]\w$(__git_ps1 " (%s)")\[\033[0;37m\
+    source ~/.git-completion.sh
+    PS1='\[\033[0;37m\][\[\033[0;32m\]\t \[\033[1;36m\]\u\[\033[0;37m\]@\h \[\033[0;32m\]\w$(__git_ps1 " (%s)")\[\033[0;37m\
 ]\n\$ '
 fi
 
@@ -11,39 +11,45 @@ if [ -f "$HOME/.hub.bash_completion.sh" ]; then
     alias git="hub"
 fi
 
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    source `brew --prefix`/etc/bash_completion
+fi
+
 if [ `uname` = "Darwin" ]; then
-	export JAVA_HOME=`/usr/libexec/java_home`
-	export PATH=$JAVA_HOME/bin:$PATH
-	export HADOOP_HOME=/usr/local/hadoop
-	export PATH=$HADOOP_HOME/bin:$PATH
-	export MAVEN_HOME=/usr/local/maven
-	export PATH=$MAVEN_HOME/bin:$PATH
-	export MAHOUT_HOME=/usr/local/mahout
-	export PATH=$MAHOUT_HOME/bin:$PATH
-	alias em='open -a /Applications/Emacs.app/Contents/MacOS/Emacs'
-	alias ls='ls -G -B -w -v'
-else
-	alias ls='ls --color -F'
+    export JAVA_HOME=`/usr/libexec/java_home`
+    export PATH=$JAVA_HOME/bin:$PATH
+    export HADOOP_HOME=/usr/local/hadoop
+    export PATH=$HADOOP_HOME/bin:$PATH
+    export MAVEN_HOME=/usr/local/maven
+    export PATH=$MAVEN_HOME/bin:$PATH
+    export MAHOUT_HOME=/usr/local/mahout
+    export PATH=$MAHOUT_HOME/bin:$PATH
+    alias em='open -a /Applications/Emacs.app/Contents/MacOS/Emacs'
+    alias ls='ls -G -B -w -v'
+    export PYTHONPATH=${PYTHONPATH}:/Users/satojkovic/.virtualenvs/ML/lib/python2.7/site-packages:/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python
+elif [ `uname` = "Linux" ]; then
+    alias ls='ls --color -F'
 fi
 
 if [ -d "$HOME/.nvm" ]; then
-	source ~/.nvm/nvm.sh
-	nvm use "v0.4.1"
+    source ~/.nvm/nvm.sh
+    nvm use "v0.4.1"
 fi
 
 if [ -d "$HOME/perl5" ]; then
-	source ~/perl5/perlbrew/etc/bashrc
+    source ~/perl5/perlbrew/etc/bashrc
 fi
 
 if [ -d "$HOME/.virtualenvs" ]; then
-	export WORKON_HOME=$HOME/.virtualenvs
-	source `which virtualenvwrapper.sh`
+    export WORKON_HOME=$HOME/.virtualenvs
+    source `which virtualenvwrapper.sh`
 fi
 
 if [ -d "$HOME/.pythonbrew" ]; then
-	source /Users/satojkovic/.pythonbrew/etc/bashrc
+    source /Users/satojkovic/.pythonbrew/etc/bashrc
 fi
 
+export GTAGSLABEL=exuberant-ctags
 alias g="git"
 alias rm="rm -i"
 alias mv="mv -i"
@@ -57,4 +63,7 @@ if [ `uname` = 'CYGWIN_NT-5.1' ]; then
 	alias cs=cygstart.exe
 fi
 
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export HISTSIZE=300000
+
+
