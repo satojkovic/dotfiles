@@ -22,5 +22,5 @@
              (add-to-list 'ac-sources 'ac-source-rsense-constant)
              (define-key ruby-mode-map (kbd "C-x .") 'ac-complete-rsense)))
 
-(setq rsense-rurema-home (concat rsense-home "/doc/ruby-refm-1.9.2-dynamic-20110729"))
-(setq rsense-rurema-refe "refe-1_9_3")
+(setq rsense-rurema-home (concat rsense-home "/doc/ruby-refm-1.9.2-dynamic-20110629"))
+(setq rsense-rurema-refe "refe-1_9_2")
