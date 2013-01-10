@@ -190,3 +190,9 @@
   "*Face used by hl-line.")
 (setq hl-line-face 'hlline-face)
 (global-hl-line-mode)
+
+;;
+;; e2wm
+;;
+(require 'e2wm)
+(global-set-key (kbd "M-+") 'e2wm:start-management)
