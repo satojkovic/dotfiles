@@ -25,6 +25,11 @@
 	rv = remote -v
 	ls = ls-files
 	ra = remote add
+	ss = stash save
+	sl = stash list
+	sd = stash drop
+	sp = stash pop
+	sa = stash apply
 [core]
 	excludesfile = /Users/satojkovic/.gitignore
 	pager = less
