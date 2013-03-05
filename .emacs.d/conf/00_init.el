@@ -206,3 +206,10 @@
 ;;
 (require 'e2wm)
 (global-set-key (kbd "M-+") 'e2wm:start-management)
+
+;;
+;; markdown mode
+;;
+(autoload 'markdown-mode "markdown-mode"
+  "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
