@@ -131,6 +131,13 @@
 (define-key anything-map (kbd "M-v") 'anything-previous-source)
 (global-set-key (kbd "C-;") 'anything)
 
+(require 'anything)
+(require 'anything-rcodetools)
+;; Command to get all RI entries.
+(setq rct-get-all-methods-command "PAGER=cat fri -l")
+;; See docs
+(define-key anything-map "\C-e" 'anything-execute-persistent-action)
+
 ;; gtags
 (autoload 'gtags-mode "gtags" "" t)
 (setq gtags-mode-hook
