@@ -19,3 +19,15 @@
   (let (parens-require-spaces)
     (insert-pair)))
 
+;;
+;; jedi
+;;
+(add-to-list 'load-path "~/.emacs.d/el-get/deferred")
+(add-to-list 'load-path "~/.emacs.d/el-get/epc")
+(add-to-list 'load-path "~/.emacs.d/el-get/ctable")
+(add-to-list 'load-path "~/.emacs.d/el-get/jedi")
+;(add-hook 'python-mode-hook 'jedi:ac-setup)
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:setup-keys t)
+(require 'jedi)
+
