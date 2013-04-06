@@ -27,7 +27,11 @@
 (add-to-list 'load-path "~/.emacs.d/el-get/ctable")
 (add-to-list 'load-path "~/.emacs.d/el-get/jedi")
 ;(add-hook 'python-mode-hook 'jedi:ac-setup)
+(jedi:key-complete (kbd "<C-tab>"))
+(jedi:key-goto-definition (kbd "C-c g"))
+(jedi:key-show-doc (kbd "C-c d"))
+(jedi:key-related-names (kbd "C-c r"))
 (add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:setup-keys t)
+;(setq jedi:setup-keys t)
 (require 'jedi)
 
