@@ -231,3 +231,9 @@
 ;; el-get
 ;;
 (require 'el-get)
+
+;;
+;; anything-git-files
+;;
+(add-to-list 'load-path "~/.emacs.d/el-get/anything-git-files")
+(require 'anything-git-files)
