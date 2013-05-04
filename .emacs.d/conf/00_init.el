@@ -237,3 +237,9 @@
 ;;
 (add-to-list 'load-path "~/.emacs.d/el-get/anything-git-files")
 (require 'anything-git-files)
+
+;;
+;; open github from here
+;;
+(add-to-list 'load-path "~/.emacs.d/el-get/open-github-from-here")
+(require 'open-github-from-here)
