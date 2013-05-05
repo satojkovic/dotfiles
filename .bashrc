@@ -31,11 +31,6 @@ elif [ `uname` = "Linux" ]; then
     alias ls='ls --color -F'
 fi
 
-if [ -d "$HOME/.nvm" ]; then
-    source ~/.nvm/nvm.sh
-    nvm use "v0.4.1"
-fi
-
 if [ -d "$HOME/perl5" ]; then
     source ~/perl5/perlbrew/etc/bashrc
 fi
@@ -63,7 +58,10 @@ if [ `uname` = 'CYGWIN_NT-5.1' ]; then
 	alias cs=cygstart.exe
 fi
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+if [ -d "$HOME/.rvm" ]; then
+    PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+fi
+
 export HISTSIZE=300000
 
 
