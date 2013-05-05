@@ -244,3 +244,10 @@
 (add-to-list 'load-path "~/.emacs.d/el-get/open-github-from-here")
 (require 'open-github-from-here)
 
+;;
+;; popwin
+;;
+(add-to-list 'load-path "~/.emacs.d/el-get/popwin")
+(require 'popwin)
+(setq display-buffer-function 'popwin:display-buffer)
+(push '(dired-mode :position top) popwin:special-display-config)
