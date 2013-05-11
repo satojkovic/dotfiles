@@ -251,3 +251,12 @@
 (require 'popwin)
 (setq display-buffer-function 'popwin:display-buffer)
 (push '(dired-mode :position top) popwin:special-display-config)
+
+;;
+;; yasnippet
+;;
+(add-to-list 'load-path "~/.emacs.d/el-get/yasnippet")
+(require 'yasnippet)
+(setq yas-snippet-dirs
+      '("~/.emacs.d/el-get/yasnippet/snippets"))
+(yas-global-mode 1)
