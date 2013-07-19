@@ -26,3 +26,6 @@ GTAGS
 *.user
 Debug/
 Release/
+
+*.pyc
+
