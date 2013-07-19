@@ -5,6 +5,8 @@
           '(lambda()
              (define-key python-mode-map "\C-m" 'newline-and-indent)))
 (setq-default indent-tabs-mode nil)
+(setq-default indent-level 4)
+(setq-default python-indent 4)
 (setq-default tab-width 4)
 (add-hook 'python-mode-hook
           (lambda ()
