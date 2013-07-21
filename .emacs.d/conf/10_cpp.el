@@ -4,14 +4,8 @@
                 ("\\.c$" . c++-mode))
               auto-mode-alist))
 
-(add-hook 'c++-mode-hook
-          '(lambda()
-             (setq c-basic-offset 4)
-             (c-set-offset 'substatement-open 0)
-             (c-set-offset 'statement-cont 0)
-             (c-set-offset 'brace-list-open 0)
-             (c-set-offset 'case-label 4)
-             ))
+(require 'google-c-style)
+(add-hook 'c++-mode-hook 'google-set-c-style)
 
 (add-hook 'c++-mode-hook
           '(lambda()
@@ -19,3 +13,6 @@
              (gtags-make-complete-list)
              ))
 
+(add-hook 'c++-mode-hook
+          '(lambda()
+             (define-key c-mode-base-map "\C-m" 'newline-and-indent)))
