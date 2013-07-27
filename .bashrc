@@ -26,7 +26,7 @@ if [ `uname` = "Darwin" ]; then
     export PATH=$MAHOUT_HOME/bin:$PATH
     alias em='open -a /Applications/Emacs.app/Contents/MacOS/Emacs'
     alias ls='ls -G -B -w -v'
-    export PYTHONPATH=${PYTHONPATH}:/Users/satojkovic/.virtualenvs/ML/lib/python2.7/site-packages:/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python
+    export PYTHONPATH=/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python:$PYTHONPATH
 elif [ `uname` = "Linux" ]; then
     alias ls='ls --color -F'
 fi
