@@ -82,37 +82,9 @@
 (setq ac-dir "~/dotfiles/.emacs.d/auto-complete/")
 (add-to-list 'load-path ac-dir)
 (require 'auto-complete-config)
-;(ac-config-default)
 (add-to-list 'ac-dictionary-directories (concat ac-dir "ac-dict/"))
-(require 'auto-complete-clang)
-(setq ac-quick-help-delay 0.8)
-(defun my-ac-cc-mode-setup ()
-  ;; 読み込むプリコンパイル済みヘッダ
-  (setq ac-clang-prefix-header "~/dotfiles/.emacs.d/site-lisp/stdafx.pch")
-  ;; 補完を自動で開始しない
-  (setq ac-auto-start nil)
-  (setq ac-clang-flags '("-w" "-ferror-limit" "1"))
-  (setq ac-sources (append '(ac-source-clang
-                             ac-source-yasnippet
-                             ac-source-gtags)
-                           ac-sources)))
-(defun my-ac-config ()
-  (global-set-key "\C-j" 'ac-start)
-  ;; C-n/C-p で候補を選択
-  (define-key ac-complete-mode-map "\C-n" 'ac-next)
-  (define-key ac-complete-mode-map "\C-p" 'ac-previous)
-
-  (setq-default ac-sources '(ac-source-abbrev
-                             ac-source-dictionary
-                             ac-source-words-in-same-mode-buffers))
-  (add-hook 'c++-mode-common-hook 'ac-cc-mode-hook)
-  (add-hook 'emacs-lisp-mode-hook 'ac-emacs-lisp-mode-setup)
-  (add-hook 'c-mode-common-hook 'my-ac-cc-mode-setup)
-  (add-hook 'ruby-mode-hook 'ac-css-mode-setup)
-  (add-hook 'auto-complete-mode-hook 'ac-common-setup)
-  (global-auto-complete-mode t))
- 
-(my-ac-config)
+(ac-config-default)
+(setq ac-delay 0.5)
 
 ;; expand-region
 (require 'expand-region)
