@@ -232,3 +232,14 @@
 (setq yas-snippet-dirs
       '("~/.emacs.d/el-get/yasnippet/snippets"))
 (yas-global-mode 1)
+
+;;
+;; from http://support.markedapp.com/kb/how-to-tips-and-tricks/marked-bonus-pack-scripts-commands-and-bundles
+(defun markdown-preview-file ()
+  "run Marked on the current file and revert the buffer"
+  (interactive)
+  (shell-command
+   (format "open -a /Applications/Marked.app %s"
+       (shell-quote-argument (buffer-file-name))))
+)
+(global-set-key "\C-cm" 'markdown-preview-file)
