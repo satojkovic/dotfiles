@@ -16,6 +16,7 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
 fi
 
 if [ `uname` = "Darwin" ]; then
+    export PATH=$PATH:/usr/local/bin/w3m
     export JAVA_HOME=`/usr/libexec/java_home`
     export PATH=$JAVA_HOME/bin:$PATH
     export HADOOP_HOME=/usr/local/hadoop
@@ -64,4 +65,4 @@ fi
 
 export HISTSIZE=300000
 
-
+[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
