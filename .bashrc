@@ -59,10 +59,6 @@ if [ `uname` = 'CYGWIN_NT-5.1' ]; then
 	alias cs=cygstart.exe
 fi
 
-if [ -d "$HOME/.rvm" ]; then
-    PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-fi
-
 export HISTSIZE=300000
 
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
