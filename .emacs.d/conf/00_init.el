@@ -246,3 +246,8 @@
        (shell-quote-argument (buffer-file-name))))
 )
 (global-set-key "\C-cm" 'markdown-preview-file)
+
+;;
+;; https://github.com/clarete/hackernews.el
+;;
+(require 'hackernews)
