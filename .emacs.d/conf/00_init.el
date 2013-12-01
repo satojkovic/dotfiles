@@ -43,6 +43,9 @@
 ;; バッファ自動再読み込み
 (global-auto-revert-mode 1)
 
+;; kill-lineで行末も削除する
+(setq kill-whole-line t)
+
 ;;
 ;; フォント
 ;;
