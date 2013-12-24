@@ -27,7 +27,6 @@ if [ `uname` = "Darwin" ]; then
     export PATH=$MAHOUT_HOME/bin:$PATH
     alias em='open -a /Applications/Emacs.app/Contents/MacOS/Emacs'
     alias ls='ls -G -B -w -v'
-    export PYTHONPATH=/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python:$PYTHONPATH
 elif [ `uname` = "Linux" ]; then
     alias ls='ls --color -F'
 fi
@@ -39,10 +38,6 @@ fi
 if [ -d "$HOME/.virtualenvs" ]; then
     export WORKON_HOME=$HOME/.virtualenvs
     source `which virtualenvwrapper.sh`
-fi
-
-if [ -d "$HOME/.pythonbrew" ]; then
-    source /Users/satojkovic/.pythonbrew/etc/bashrc
 fi
 
 export GTAGSLABEL=exuberant-ctags
@@ -62,3 +57,6 @@ fi
 export HISTSIZE=300000
 
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
+if [ -d "$HOME/.pythonz/pythons/CPython-2.7.3" ]; then
+    export PATH=$HOME/.pythonz/pythons/CPython-2.7.3/bin:$PATH
+fi
