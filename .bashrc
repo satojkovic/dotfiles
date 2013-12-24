@@ -35,11 +35,6 @@ if [ -d "$HOME/perl5" ]; then
     source ~/perl5/perlbrew/etc/bashrc
 fi
 
-if [ -d "$HOME/.virtualenvs" ]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    source `which virtualenvwrapper.sh`
-fi
-
 export GTAGSLABEL=exuberant-ctags
 alias g="git"
 alias rm="rm -i"
@@ -57,6 +52,11 @@ fi
 export HISTSIZE=300000
 
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
-if [ -d "$HOME/.pythonz/pythons/CPython-2.7.3" ]; then
-    export PATH=$HOME/.pythonz/pythons/CPython-2.7.3/bin:$PATH
+if [ -d "$HOME/.pythonz/pythons/CPython-2.7.5" ]; then
+    export PATH=$HOME/.pythonz/pythons/CPython-2.7.5/bin:$PATH
+fi
+
+if [ -d "$HOME/.virtualenvs" ]; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    source `which virtualenvwrapper.sh`
 fi
