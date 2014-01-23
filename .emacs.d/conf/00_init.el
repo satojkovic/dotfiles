@@ -46,6 +46,9 @@
 ;; kill-lineで行末も削除する
 (setq kill-whole-line t)
 
+;; scratchバッファのメッセージを消す
+(setq initial-scratch-message "")
+
 ;;
 ;; フォント
 ;;
