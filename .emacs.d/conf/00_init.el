@@ -20,8 +20,10 @@
 ;; リージョンをC-hで削除
 (delete-selection-mode 1)
 
-;; スクロールバー非表示
+;; 各種バー非表示
 (scroll-bar-mode nil)
+(tool-bar-mode -1)
+(menu-bar-mode -1)
 
 ;; フリンジ(左右の折り返し表示領域)はいらない
 (fringe-mode 'none)
