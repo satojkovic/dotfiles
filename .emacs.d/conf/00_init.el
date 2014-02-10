@@ -48,20 +48,6 @@
 ;; scratchバッファのメッセージを消す
 (setq initial-scratch-message "")
 
-;;;
-;;; fullscreenの設定
-;;;
-(cond ((= emacs-major-version 24)
-       (progn
-	 (setq ns-use-native-fullscreen nil)
-	 ))
-      ((= emacs-major-version 23)
-       (progn
-	 (ns-toggle-fullscreen-internal)
-	 (split-window-horizontally)
-	 ))
-      )
-
 ;;
 ;; フォント
 ;;
@@ -90,6 +76,20 @@
       (set-background-color "Black")
       (set-foreground-color "LightGray")
       ))
+
+;;;
+;;; fullscreenの設定
+;;;
+(cond ((= emacs-major-version 24)
+       (progn
+	 (setq ns-use-native-fullscreen nil)
+	 ))
+      ((= emacs-major-version 23)
+       (progn
+	 (ns-toggle-fullscreen-internal)
+	 (split-window-horizontally)
+	 ))
+      )
 
 ;;
 ;; auto-complete
