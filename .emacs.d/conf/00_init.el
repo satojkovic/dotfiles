@@ -99,7 +99,7 @@
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories (concat ac-dir "ac-dict/"))
 (ac-config-default)
-(setq ac-delay 0.5)
+(setq ac-delay 0.3)
 
 ;; expand-region
 (require 'expand-region)
