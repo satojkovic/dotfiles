@@ -48,6 +48,9 @@
 ;; scratchバッファのメッセージを消す
 (setq initial-scratch-message "")
 
+;; 指定行へジャンプする
+(global-set-key (kbd "M-g") 'goto-line)
+
 ;;
 ;; フォント
 ;;
@@ -197,6 +200,10 @@
 ;;
 (require 'e2wm)
 (global-set-key (kbd "M-+") 'e2wm:start-management)
+(e2wm:add-keymap
+ e2wm:pst-minor-mode-keymap
+ '(("M-m" . e2wm:pst-window-select-main-command)
+   ) e2wm:prefix-key)
 
 ;;
 ;; markdown mode
