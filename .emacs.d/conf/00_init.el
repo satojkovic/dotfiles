@@ -104,6 +104,15 @@
 (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
 
 ;;
+;; diredでファイル作成
+;;
+(defun dired-create-file (file-name)
+  (interactive "F Create file: ")
+  (write-region "" nil file-name nil nil nil))
+
+(define-key dired-mode-map "c" 'dired-create-file)
+
+;;
 ;; auto-complete
 ;;
 (setq ac-dir "~/dotfiles/.emacs.d/auto-complete/")
