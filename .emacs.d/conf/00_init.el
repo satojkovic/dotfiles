@@ -51,6 +51,9 @@
 ;; 指定行へジャンプする
 (global-set-key (kbd "M-g") 'goto-line)
 
+;; y or n
+(fset 'yes-or-no-p 'y-or-n-p)
+
 ;;
 ;; フォント
 ;;
@@ -219,6 +222,17 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
 ;;
+;; from http://support.markedapp.com/kb/how-to-tips-and-tricks/marked-bonus-pack-scripts-commands-and-bundles
+(defun markdown-preview-file ()
+  "run Marked on the current file and revert the buffer"
+  (interactive)
+  (shell-command
+   (format "open -a /Applications/Marked.app %s"
+       (shell-quote-argument (buffer-file-name))))
+)
+(global-set-key "\C-cm" 'markdown-preview-file)
+
+;;
 ;; el-get
 ;;
 (require 'el-get)
@@ -253,17 +267,7 @@
 (yas-global-mode 1)
 
 ;;
-;; from http://support.markedapp.com/kb/how-to-tips-and-tricks/marked-bonus-pack-scripts-commands-and-bundles
-(defun markdown-preview-file ()
-  "run Marked on the current file and revert the buffer"
-  (interactive)
-  (shell-command
-   (format "open -a /Applications/Marked.app %s"
-       (shell-quote-argument (buffer-file-name))))
-)
-(global-set-key "\C-cm" 'markdown-preview-file)
-
-;;
 ;; https://github.com/clarete/hackernews.el
 ;;
 (require 'hackernews)
+
