@@ -21,9 +21,9 @@
 (delete-selection-mode 1)
 
 ;; 各種バー非表示
-(scroll-bar-mode nil)
-(tool-bar-mode -1)
-(menu-bar-mode -1)
+(toggle-scroll-bar nil)
+(tool-bar-mode nil)
+(menu-bar-mode nil)
 
 ;; 対応する括弧を光らせる
 (show-paren-mode 1)
