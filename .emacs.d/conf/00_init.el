@@ -54,6 +54,10 @@
 ;; y or n
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; linum-mode
+(require 'linum)
+(global-linum-mode 1)
+
 ;;
 ;; フォント
 ;;
