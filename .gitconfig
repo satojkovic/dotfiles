@@ -15,7 +15,7 @@
 	lg = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
 	ll = log --stat --abbrev-commit
 	pr = pull --rebase
-	st = status -sb
+	st = status -sb --untracked-files=no
 	cgl = config --global --list
 	cll = config --local --list
 	spull = svn rebase
