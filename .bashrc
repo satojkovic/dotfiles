@@ -60,3 +60,8 @@ if [ -d "$HOME/.virtualenvs" ]; then
     export WORKON_HOME=$HOME/.virtualenvs
     source `which virtualenvwrapper.sh`
 fi
+
+GIT_PROMPT_ONLY_IN_REPO=1
+if [ -d "$HOME/.bash-git-prompt" ]; then
+    source ~/.bash-git-prompt/gitprompt.sh
+fi
