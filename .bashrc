@@ -65,3 +65,8 @@ GIT_PROMPT_ONLY_IN_REPO=1
 if [ -d "$HOME/.bash-git-prompt" ]; then
     source ~/.bash-git-prompt/gitprompt.sh
 fi
+
+export GOROOT=/usr/local/Cellar/go/1.2.2
+export GOPATH=$HOME/projects/gocode
+export PATH=$PATH:$GOPATH/bin
+
