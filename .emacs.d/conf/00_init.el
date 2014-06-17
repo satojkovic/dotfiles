@@ -58,6 +58,20 @@
 (require 'linum)
 (global-linum-mode 1)
 
+;; multi-term
+(setq load-path
+      (append '("~/.emacs.d/el-get/multi-term")
+              load-path))
+(require 'multi-term)
+(setq multi-term-program shell-file-name)
+
+(global-set-key (kbd "C-c t") '(lambda ()
+                                 (interactive)
+                                 (multi-term)))
+
+(global-set-key (kbd "C-c n") 'multi-term-next)
+(global-set-key (kbd "C-c p") 'multi-term-prev)
+
 ;;
 ;; フォント
 ;;
@@ -251,36 +265,9 @@
 (require 'el-get)
 
 ;;
-;; anything-git-files
-;;
-(add-to-list 'load-path "~/.emacs.d/el-get/anything-git-files")
-(require 'anything-git-files)
-
-;;
-;; open github from here
-;;
-(add-to-list 'load-path "~/.emacs.d/el-get/open-github-from-here")
-(require 'open-github-from-here)
-
-;;
 ;; popwin
 ;;
 (add-to-list 'load-path "~/.emacs.d/el-get/popwin")
 (require 'popwin)
 (setq display-buffer-function 'popwin:display-buffer)
 (push '(dired-mode :position top) popwin:special-display-config)
-
-;;
-;; yasnippet
-;;
-(add-to-list 'load-path "~/.emacs.d/el-get/yasnippet")
-(require 'yasnippet)
-(setq yas-snippet-dirs
-      '("~/.emacs.d/el-get/yasnippet/snippets"))
-(yas-global-mode 1)
-
-;;
-;; https://github.com/clarete/hackernews.el
-;;
-(require 'hackernews)
-
