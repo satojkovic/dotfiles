@@ -15,6 +15,8 @@
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/conf")
 
+(if (not (equal (init-loader-error-log) ""))
+    (init-loader-show-log))
 
 ;;; This was installed by package-install.el.
 ;;; This provides support for the package system and
