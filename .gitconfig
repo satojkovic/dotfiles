@@ -41,6 +41,7 @@
 	dc = diff --cached
 	cfg = config --global
 	rlg = reflog
+	cl = clone
 [core]
 	excludesfile = /Users/satojkovic/.gitignore
 	pager = less
