@@ -67,6 +67,6 @@ if [ -d "$HOME/.bash-git-prompt" ]; then
 fi
 
 export GOROOT=/usr/local/Cellar/go/1.2.2
-export GOPATH=$HOME/projects/gocode
+export GOPATH=$HOME/project/go-work
 export PATH=$PATH:$GOPATH/bin
 
