@@ -34,3 +34,21 @@
   (global-auto-complete-mode t))
 
 (my-ac-config)
+
+;; for find other file
+(defvar my-cpp-other-file-alist
+  '(("\\.cpp\\'" (".hpp" ".ipp"))
+    ("\\.ipp\\'" (".hpp" ".cpp"))
+    ("\\.hpp\\'" (".ipp" ".cpp"))
+    ("\\.cxx\\'" (".hxx" ".ixx"))
+    ("\\.ixx\\'" (".cxx" ".hxx"))
+    ("\\.hxx\\'" (".ixx" ".cxx"))
+    ("\\.c\\'" (".h"))
+    ("\\.h\\'" (".c"))
+    ))
+
+(setq-default ff-other-file-alist 'my-cpp-other-file-alist)
+(add-hook 'c-initialization-hook (lambda ()
+                                   (define-key c-mode-base-map [(meta o)]
+                                     'ff-find-other-file))
+)
