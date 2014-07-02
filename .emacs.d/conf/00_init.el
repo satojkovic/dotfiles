@@ -252,3 +252,9 @@
 
 ;; helm
 (require 'helm-config)
+
+;; melpa
+(load (expand-file-name "~/.emacs.d/elpa/package.el"))
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+(package-initialize)
