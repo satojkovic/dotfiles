@@ -137,6 +137,8 @@
 (require 'auto-complete-config)
 (ac-config-default)
 (setq ac-delay 0.1)
+(define-key ac-complete-mode-map "\C-n" 'ac-next)
+(define-key ac-complete-mode-map "\C-p" 'ac-previous)
 
 ;; ido-mode
 (require 'ido)
