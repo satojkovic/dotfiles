@@ -1,3 +1,10 @@
+;; melpa
+(load (expand-file-name "~/.emacs.d/elpa/package.el"))
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(package-initialize)
+
 ;; ¥の代わりにバックスラッシュを入力する
 (define-key global-map [?¥] [?\\])  
 
@@ -48,29 +55,12 @@
 ;; scratchバッファのメッセージを消す
 (setq initial-scratch-message "")
 
-;; 指定行へジャンプする
-(global-set-key (kbd "M-g") 'goto-line)
-
 ;; y or n
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; linum-mode
 (require 'linum)
 (global-linum-mode 1)
-
-;; multi-term
-(setq load-path
-      (append '("~/.emacs.d/el-get/multi-term")
-              load-path))
-(require 'multi-term)
-(setq multi-term-program shell-file-name)
-
-(global-set-key (kbd "C-c t") '(lambda ()
-                                 (interactive)
-                                 (multi-term)))
-
-(global-set-key (kbd "C-c n") 'multi-term-next)
-(global-set-key (kbd "C-c p") 'multi-term-prev)
 
 ;;
 ;; フォント
@@ -91,15 +81,6 @@
 	(".*Osaka-bold.*" . 1.2)
 	(".*Osaka-medium.*" . 1.2)
 	("-cdac$" . 1.4)))
-
-;;
-;; 配色
-;;
-(if window-system 
-    (progn                    
-      (set-background-color "Black")
-      (set-foreground-color "LightGray")
-      ))
 
 ;;;
 ;;; fullscreenの設定
@@ -130,64 +111,10 @@
 
 (define-key dired-mode-map "c" 'dired-create-file)
 
-;;
-;; auto-complete
-;;
-(setq ac-dir "~/dotfiles/.emacs.d/auto-complete/")
-(add-to-list 'load-path ac-dir)
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories (concat ac-dir "ac-dict/"))
-(ac-config-default)
-(setq ac-delay 0.3)
-
-;; expand-region
-(require 'expand-region)
-(global-set-key (kbd "C-@") 'er/expand-region)
-
-;; auto-install
-(require 'auto-install)
-
-;; iswitchb
-(iswitchb-mode 1)
-(add-hook 'iswitchb-define-mode-map-hook
-          (lambda()
-            (define-key iswitchb-mode-map "\C-n" 'iswitchb-next-match)
-            (define-key iswitchb-mode-map "\C-p" 'iswitchb-prev-match)
-            (define-key iswitchb-mode-map "\C-f" 'iswitchb-next-match)
-            (define-key iswitchb-mode-map "\C-b" 'iswitchb-prev-match)))
-
 ;; anything
-(require 'anything-config)
-(setq anything-sources (list anything-c-source-buffers
-                             anything-c-source-bookmarks
-                             anything-c-source-recentf
-                             anything-c-source-file-name-history
-                             anything-c-source-locate))
-(define-key anything-map (kbd "C-p") 'anything-previous-line)
-(define-key anything-map (kbd "C-n") 'anything-next-line)
-(define-key anything-map (kbd "C-v") 'anything-next-source)
-(define-key anything-map (kbd "M-v") 'anything-previous-source)
-(global-set-key (kbd "C-;") 'anything)
-
 (require 'anything)
-(require 'anything-rcodetools)
-;; Command to get all RI entries.
-(setq rct-get-all-methods-command "PAGER=cat fri -l")
-;; See docs
-(define-key anything-map "\C-e" 'anything-execute-persistent-action)
-
-;; gtags
-(autoload 'gtags-mode "gtags" "" t)
-(setq gtags-mode-hook
-      '(lambda()
-         (local-set-key "\M-t" 'gtags-find-tag)
-         (local-set-key "\M-r" 'gtags-find-rtag)
-         (local-set-key "\M-s" 'gtags-find-symbol)
-         (local-set-key "\C-t" 'gtags-pop-stack)
-         ))
-
-;; flycheck
-(add-hook 'after-init-hook #'global-flycheck-mode)
+(require 'anything-config)
+(add-to-list 'anything-sources 'anything-c-source-emacs-commands)
 
 ;; 
 ;; 現在行のハイライト
@@ -205,56 +132,21 @@
 (setq hl-line-face 'hlline-face)
 (global-hl-line-mode)
 
-;;
-;; e2wm
-;;
-(require 'e2wm)
-(global-set-key (kbd "M-+") 'e2wm:start-management)
-(e2wm:add-keymap
- e2wm:pst-minor-mode-keymap
- '(("M-m" . e2wm:pst-window-select-main-command)
-   ) e2wm:prefix-key)
-
-;;
-;; markdown mode
-;;
-(autoload 'markdown-mode "markdown-mode"
-  "Major mode for editing Markdown files" t)
-(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-
-;;
-;; from http://support.markedapp.com/kb/how-to-tips-and-tricks/marked-bonus-pack-scripts-commands-and-bundles
-(defun markdown-preview-file ()
-  "run Marked on the current file and revert the buffer"
-  (interactive)
-  (shell-command
-   (format "open -a /Applications/Marked.app %s"
-       (shell-quote-argument (buffer-file-name))))
-)
-(global-set-key "\C-cm" 'markdown-preview-file)
-
-;;
-;; el-get
-;;
-(require 'el-get)
-
-;;
-;; popwin
-;;
-(add-to-list 'load-path "~/.emacs.d/el-get/popwin")
-(require 'popwin)
-(setq display-buffer-function 'popwin:display-buffer)
-(push '(dired-mode :position top) popwin:special-display-config)
+;; auto-complete
+(require 'auto-complete)
+(require 'auto-complete-config)
+(ac-config-default)
+(setq ac-delay 0.1)
 
 ;; ido-mode
 (require 'ido)
 (ido-mode t)
 
-;; helm
-(require 'helm-config)
+;; flycheck
+(add-hook 'after-init-hook #'global-flycheck-mode)
+(eval-after-load 'flycheck
+  '(custom-set-variables
+   '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
 
-;; melpa
-(load (expand-file-name "~/.emacs.d/elpa/package.el"))
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-(package-initialize)
+;; color-theme-solarized
+(load-theme 'solarized-dark t)
