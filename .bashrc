@@ -68,3 +68,4 @@ fi
 # golang
 export GOROOT=/usr/local/Cellar/go/1.2.2/libexec
 export GOPATH=/Users/satojkovic/projects/go
+export PATH=$PATH:/usr/local/Cellar/go/1.2.2/bin:$GOPATH/bin
