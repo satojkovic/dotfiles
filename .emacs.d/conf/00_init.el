@@ -176,3 +176,7 @@
            (shell-quote-argument (buffer-file-name))))
   )
 (global-set-key "\C-cm" 'markdown-preview-file)
+
+;; ctags
+(require 'anything-exuberant-ctags)
+
