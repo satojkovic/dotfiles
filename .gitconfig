@@ -29,14 +29,6 @@
 	sd = stash drop
 	sp = stash pop
 	sa = stash apply
-	switch = !legit switch \"$@\"
-	branches = !legit branches
-	sprout = !legit sprout \"$@\"
-	unpublish = !legit unpublish \"$@\"
-	harvest = !legit harvest \"$@\"
-	sync = !legit sync \"$@\"
-	publish = !legit publish \"$@\"
-	graft = !legit graft \"$@\"
 	d = diff
 	dc = diff --cached
 	cfg = config --global
