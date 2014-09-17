@@ -70,3 +70,8 @@ export GOROOT=/usr/local/Cellar/go/1.2.2/libexec
 export GOPATH=/Users/satojkovic/projects/go
 export PATH=$PATH:/usr/local/Cellar/go/1.2.2/bin:$GOPATH/bin
 export DYLD_LIBRARY_PATH=$GOPATH/src/github.com/sjwhitworth/golearn/ext/lib:$DYLD_LIBRARY_PATH
+
+# aliased git completion
+complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null \
+    || complete -o default -o nospace -F _git g
+
