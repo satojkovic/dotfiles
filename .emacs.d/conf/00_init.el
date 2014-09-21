@@ -180,3 +180,6 @@
 ;; ctags
 (require 'anything-exuberant-ctags)
 
+;;
+(when (fboundp 'windmove-default-keybindings)
+  (windmove-default-keybindings))
