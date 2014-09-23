@@ -19,3 +19,5 @@
                     :underline t :foreground "green"
                     :weight 'bold)
 
+;; go-direx
+(define-key go-mode-map (kbd "C-c C-j") 'go-direx-pop-to-buffer)
