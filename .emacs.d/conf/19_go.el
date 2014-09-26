@@ -24,3 +24,7 @@
 
 (setq gofmt-command "goimports")
 (add-hook 'before-save-hook 'gofmt-before-save)
+
+;; go-oracle
+(load-file "$GOPATH/src/code.google.com/p/go.tools/cmd/oracle/oracle.el")
+(go-oracle-mode)
