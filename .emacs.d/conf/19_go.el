@@ -21,3 +21,6 @@
 
 ;; go-direx
 (define-key go-mode-map (kbd "C-c C-j") 'go-direx-pop-to-buffer)
+
+(setq gofmt-command "goimports")
+(add-hook 'before-save-hook 'gofmt-before-save)
