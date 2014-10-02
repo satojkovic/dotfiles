@@ -183,3 +183,9 @@
 ;;
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
+
+;; zenburn-theme
+(load-theme 'zenburn t)
+
+;; google-this
+(google-this-mode 1)
