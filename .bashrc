@@ -40,10 +40,6 @@ elif [ `uname` = 'CYGWIN_NT-5.1' ]; then
     alias cs=cygstart.exe
 fi
 
-if [ -d "$HOME/perl5" ]; then
-    source ~/perl5/perlbrew/etc/bashrc
-fi
-
 export GTAGSLABEL=exuberant-ctags
 export HISTSIZE=300000
 
