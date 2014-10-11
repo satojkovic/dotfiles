@@ -62,9 +62,9 @@ if [ -d "$HOME/.bash-git-prompt" ]; then
 fi
 
 # golang
-export GOROOT=/usr/local/Cellar/go/1.2.2/libexec
-export GOPATH=/Users/satojkovic/projects/go
-export PATH=$PATH:/usr/local/Cellar/go/1.2.2/bin:$GOPATH/bin
+export GOROOT=/usr/local/Cellar/go/1.3/libexec
+export GOPATH=$HOME
+export PATH=$PATH:/usr/local/Cellar/go/1.3/bin:$GOPATH/bin
 export DYLD_LIBRARY_PATH=$GOPATH/src/github.com/sjwhitworth/golearn/ext/lib:$DYLD_LIBRARY_PATH
 
 # aliased git completion
