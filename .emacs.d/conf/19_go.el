@@ -1,3 +1,5 @@
+(add-to-list 'exec-path "/Users/satojkovic/bin/")
+
 (require 'go-mode)
 (add-hook 'go-mode-hook
           '(lambda()
@@ -12,6 +14,7 @@
 (add-hook 'before-save-hook 'gofmt-before-save)
 
 (require 'go-autocomplete)
+(require 'auto-complete-config)
 
 (require 'go-eldoc)
 (add-hook 'go-mode-hook 'go-eldoc-setup)
