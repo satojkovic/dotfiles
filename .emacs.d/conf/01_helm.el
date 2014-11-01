@@ -10,3 +10,7 @@
 (helm-mode 1)
 
 (require 'helm-swoop)
+
+(autoload 'helm-go-package "helm-go-package")
+(eval-after-load 'go-mode
+  '(substitute-key-definition 'go-import-add 'helm-go-package go-mode-map))
