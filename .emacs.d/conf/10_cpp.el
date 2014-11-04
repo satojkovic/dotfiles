@@ -33,3 +33,6 @@
 (add-hook 'c++-mode-hook 'c-turn-on-eldoc-mode)
 (setq c-eldoc-cpp-command "/usr/bin/clang")
 
+;; auto-complete
+(require 'auto-complete-config)
+(ac-config-default)
