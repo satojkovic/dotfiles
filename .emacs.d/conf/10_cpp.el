@@ -23,8 +23,6 @@
 ;; eldoc
 (load "c-eldoc")
 (add-hook 'c-mode-common-hook 'c-turn-on-eldoc-mode)
-(setq c-eldoc-cpp-command "/usr/bin/clang")
-(setq c-eldoc-includes "-I/opt/X11/lib/pkgconfig")
 
 ;; auto-complete-c-headers
 (defun my:ac-c-header-init ()
