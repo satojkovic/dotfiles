@@ -205,3 +205,7 @@
 (setq migemo-coding-system 'utf-8)
 (load-library "migemo")
 (migemo-init)
+
+;; yasnippet
+(require 'yasnippet)
+(yas-global-mode 1)

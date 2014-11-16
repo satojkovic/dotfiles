@@ -9,3 +9,6 @@
 (global-set-key (kbd "C-c <down>") 'buf-move-down)
 (global-set-key (kbd "C-c <left>") 'buf-move-left)
 (global-set-key (kbd "C-c <right>") 'buf-move-right)
+
+;; iedit
+(define-key global-map (kbd "C-c ;") 'iedit-mode)
