@@ -12,3 +12,6 @@
 
 ;; iedit
 (define-key global-map (kbd "C-c ;") 'iedit-mode)
+
+;;
+(global-set-key "\C-cq" 'delete-indentation)
