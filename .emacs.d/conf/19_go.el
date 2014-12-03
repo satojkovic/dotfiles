@@ -31,3 +31,11 @@
 ;; go-oracle
 (load-file "$GOPATH/src/code.google.com/p/go.tools/cmd/oracle/oracle.el")
 (go-oracle-mode)
+
+;; goflymake
+(add-to-list 'load-path "~/src/github.com/dougm/goflymake")
+(require 'go-flymake)
+
+;; golint
+(add-to-list 'load-path "~/src/github.com/golang/lint/misc/emacs")
+(require 'golint)
