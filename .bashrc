@@ -63,7 +63,7 @@ fi
 
 # golang
 export GOPATH=$HOME
-export PATH=$PATH:/usr/local/Cellar/go/1.3/bin:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin
 export DYLD_LIBRARY_PATH=$GOPATH/src/github.com/sjwhitworth/golearn/ext/lib:$DYLD_LIBRARY_PATH
 
 # aliased git completion
