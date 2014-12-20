@@ -28,7 +28,7 @@
 (defun my:ac-c-header-init ()
   (require 'auto-complete-c-headers)
   (add-to-list 'ac-sources 'ac-source-c-headers)
-  (add-to-list 'achead:include-directories '"/usr/local/Cellar/gcc49/4.9-20131229/lib/gcc/x86_64-apple-darwin13.0.2/4.9.0/include/c++")
+  (add-to-list 'achead:include-directories '"/usr/local/Cellar/gcc49/4.9-20131229/lib/gcc/x86_64-apple-darwin13.0.2/4.9.0/include/c++" "/usr/local/Cellar/opencv/2.4.9/include")
   )
 
 (add-hook 'c-mode-common-hook 'my:ac-c-header-init)
