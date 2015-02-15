@@ -32,8 +32,8 @@ complete -C perldoc-complete -o nospace -o default perldoc
 if [ `uname` = "Darwin" ]; then
     export JAVA_HOME=`/usr/libexec/java_home`
     export PATH=$JAVA_HOME/bin:$PATH
-    alias em='open -a /Applications/Emacs.app/Contents/MacOS/Emacs'
     alias ls='ls -G -B -w -v'
+    alias em='open -a /Applications/Emacs.app/Contents/MacOS/Emacs'
 elif [ `uname` = "Linux" ]; then
     alias ls='ls --color -F'
 elif [ `uname` = 'CYGWIN_NT-5.1' ]; then
@@ -42,12 +42,6 @@ fi
 
 export GTAGSLABEL=exuberant-ctags
 export HISTSIZE=300000
-
-# pythonz
-[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
-if [ -d "$HOME/.pythonz/pythons/CPython-2.7.5" ]; then
-    export PATH=$HOME/.pythonz/pythons/CPython-2.7.5/bin:$PATH
-fi
 
 # virtualenv
 if [ -d "$HOME/.virtualenvs" ]; then
@@ -63,7 +57,7 @@ fi
 
 # golang
 export GOPATH=$HOME
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin:/usr/local/opt/go/libexec/bin
 export DYLD_LIBRARY_PATH=$GOPATH/src/github.com/sjwhitworth/golearn/ext/lib:$DYLD_LIBRARY_PATH
 
 # aliased git completion

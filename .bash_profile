@@ -4,5 +4,5 @@ fi
 
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
