@@ -151,9 +151,6 @@
   '(custom-set-variables
    '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
 
-;; color-theme-solarized
-(load-theme 'solarized-dark t)
-
 ;; nyan-mode
 (nyan-mode)
 
