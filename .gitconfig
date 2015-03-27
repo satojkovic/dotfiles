@@ -10,6 +10,7 @@
 	c = commit
 	cm = commit -m
 	co = checkout
+        cob = checkout -b
 	l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s%C(white)- %an, %ar%Creset'
 	lg = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
 	ll = log --stat --abbrev-commit
@@ -23,13 +24,14 @@
 	lsr = ls-remote
 	rv = remote -v
 	ls = ls-files
-	ra = remote add
+        ra = remote add
+        rv = remote -v
 	ss = stash save
 	sl = stash list
 	sd = stash drop
 	sp = stash pop
 	sa = stash apply
-	d = diff
+	df = diff
 	dc = diff --cached
 	cfg = config --global
 	rlg = reflog
