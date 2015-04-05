@@ -111,6 +111,7 @@
   (write-region "" nil file-name nil nil nil))
 
 (define-key dired-mode-map "c" 'dired-create-file)
+(define-key dired-mode-map (kbd "C-s") 'phi-search-dired)
 
 ;; anything
 (require 'anything)
