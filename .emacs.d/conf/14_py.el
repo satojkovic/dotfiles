@@ -1,3 +1,4 @@
+
 ;;
 ;; python-mode をロードする
 ;;
@@ -16,3 +17,6 @@
 (require 'jedi)
 (add-hook 'python-mode-hook 'jedi:ac-setup)
 (setq jedi:complete-on-dot t)
+(add-hook 'python-mode-hook
+          '(lambda ()
+             (define-key python-mode-map (kbd "<C-S-return>") 'jedi:complete)))
