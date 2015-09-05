@@ -29,7 +29,7 @@
 (add-hook 'before-save-hook 'gofmt-before-save)
 
 ;; go-oracle
-(load-file "$GOPATH/src/golang.org/x/tools/cmd/oracle/oracle.el")
+(load-file "~/src/golang.org/x/tools/cmd/oracle/oracle.el")
 (go-oracle-mode)
 
 ;; goflymake
@@ -39,3 +39,6 @@
 ;; golint
 (add-to-list 'load-path "~/src/github.com/golang/lint/misc/emacs")
 (require 'golint)
+
+;; go-stacktracer
+(require 'go-stacktracer)

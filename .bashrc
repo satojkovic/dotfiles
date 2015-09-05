@@ -23,9 +23,11 @@ alias g="git"
 alias rm="rm -i"
 alias mv="mv -i"
 alias cp="cp -i"
+alias gi="grep -i"
 alias ll="ls -l"
 alias la="ls -a"
 alias lal="ls -al"
+alias l="less"
 alias pod=perldoc
 complete -C perldoc-complete -o nospace -o default perldoc
 
@@ -64,3 +66,7 @@ export DYLD_LIBRARY_PATH=$GOPATH/src/github.com/sjwhitworth/golearn/ext/lib:$DYL
 complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null \
     || complete -o default -o nospace -F _git g
 
+# pyenv
+if [ -d "$HOME/.pyenv" ]; then
+	export PYTHONPATH=$PYTHONPATH:$HOME/.pyenv/versions/2.7.9/lib/python2.7/site-packages:/usr/local/lib/python2.7/site-packages/
+fi
