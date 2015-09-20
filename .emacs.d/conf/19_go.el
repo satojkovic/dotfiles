@@ -32,9 +32,8 @@
 (load-file "~/src/golang.org/x/tools/cmd/oracle/oracle.el")
 (go-oracle-mode)
 
-;; goflymake
-(add-to-list 'load-path "~/src/github.com/dougm/goflymake")
-(require 'go-flymake)
+;; flycheck
+(add-hook 'go-mode-hook 'flycheck-mode)
 
 ;; golint
 (add-to-list 'load-path "~/src/github.com/golang/lint/misc/emacs")

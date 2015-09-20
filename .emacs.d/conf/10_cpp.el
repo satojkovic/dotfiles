@@ -49,3 +49,5 @@
   )
 (add-hook 'c-mode-common-hook 'my:add-semantic-to-autocomplete)
 (global-semantic-idle-scheduler-mode 1)
+;; flycheck
+(add-hook 'c-mode-common-hook 'flycheck-mode)

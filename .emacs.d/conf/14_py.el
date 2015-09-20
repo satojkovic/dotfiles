@@ -20,3 +20,5 @@
 (add-hook 'python-mode-hook
           '(lambda ()
              (define-key python-mode-map (kbd "<C-S-return>") 'jedi:complete)))
+
+(add-hook 'python-mode-hook 'flycheck-mode)
