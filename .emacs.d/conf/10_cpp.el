@@ -21,24 +21,25 @@
 )
 
 ;; eldoc
-(load "c-eldoc")
+(require 'eldoc)
+(setq eldoc-idle-delay 0)
+(setq eldoc-echo-area-use-multiline-p t)
 (add-hook 'c-mode-common-hook 'c-turn-on-eldoc-mode)
 
 ;; auto-complete-c-headers
 (defun my:ac-c-header-init ()
   (require 'auto-complete-c-headers)
-  (add-to-list 'ac-sources 'ac-source-c-headers)
-  (add-to-list 'achead:include-directories '"/usr/local/Cellar/gcc49/4.9-20131229/lib/gcc/x86_64-apple-darwin13.0.2/4.9.0/include/c++" "/usr/local/Cellar/opencv/2.4.9/include")
-  )
-
-(add-hook 'c-mode-common-hook 'my:ac-c-header-init)
+  (add-to-list 'ac-sources 'ac-source-c-headers))
+(add-hook 'c-mode-hook 'my:ac-c-header-init)
+(add-hook 'c++-mode-hook 'my:ac-c-header-init)
 
 ;; flymake
 (defun my:flymake-google-init ()
   (require 'flymake-google-cpplint)
   (custom-set-variables
-   '(flymake-google-cpplint-command "/Users/satojkovic/.pythonz/pythons/CPython-2.7.5/bin/cpplint"))
-  (flymake-google-cpplint-load)
+   '(flymake-google-cpplint-command "/Users/satojkovic/bin/cpplint.py"))
+  (add-hook 'c++-mode-hook 'flymake-google-cpplint-load)
+  (add-hook 'c-mode-common-hook 'flymake-google-cpplint-load)
   )
 (add-hook 'c-mode-common-hook 'my:flymake-google-init)
 
