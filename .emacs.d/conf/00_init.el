@@ -97,6 +97,7 @@
 	 (split-window-horizontally)
 	 ))
       )
+(global-set-key (kbd "<C-s-268632070>") 'toggle-frame-fullscreen)
 
 ;;
 ;; wdired
@@ -143,10 +144,6 @@
 (setq ac-use-menu-map t)
 (setq ac-use-fuzzy t)
 
-;; ido-mode
-(require 'ido)
-(ido-mode t)
-
 ;; nyan-mode
 (nyan-mode)
 
@@ -161,16 +158,7 @@
 (global-set-key (kbd "C-x v s") 'git-gutter:stage-hunk)
 (global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
 
-;; marked
-(defun markdown-preview-file ()
-  "run marked on the current file and revert the buffer"
-  (interactive)
-  (shell-command
-   (format "open -a /Applications/Marked.app %s"
-           (shell-quote-argument (buffer-file-name))))
-  )
-(global-set-key "\C-cm" 'markdown-preview-file)
-
+;; markdown mode
 (autoload 'markdown-mode "markdown-mode"
   "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
@@ -179,7 +167,7 @@
 ;; ctags
 (require 'anything-exuberant-ctags)
 
-;;
+;; window move
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
 
@@ -241,12 +229,6 @@
 (defun imenus-exit-minibuffer ()
   (exit-minibuffer))
 
-;;; ido化: imenus/with-ido imenus-mode-buffers/with-idoを定義
-(with-ido-completion imenus)
-;; C-M-s C-M-sで現在のシンボルをhelm-multi-swoopできるよ！
-(global-set-key (kbd "C-M-s") (with-ido-completion imenus-mode-buffers))
-
-
 ;;; M-oでのmulti-occurをシンボル正規表現にするよう改良
 (push '(occur . imenus-ido-multi-occur) imenus-actions)
 (defun imenus-ido-multi-occur (buffers input)
@@ -266,10 +248,10 @@
   (setq imenus-exit-status 'helm-multi-swoop)
   (imenus-exit-minibuffer))
 
-;;
-(require 'descbinds-anything)
-(descbinds-anything-install)
-
 ;; iedit
 (require 'iedit)
 (define-key global-map (kbd "C-c ;") 'iedit-mode)
+
+;; helm describe bindings
+(require 'helm-descbinds)
+(helm-descbinds-mode)
