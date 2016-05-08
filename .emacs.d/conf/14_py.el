@@ -37,3 +37,10 @@
               (define-key python-mode-map "(" 'electric-pair)
               (define-key python-mode-map "[" 'electric-pair)
               (define-key python-mode-map "{" 'electric-pair)))
+
+;;
+;; elpy
+;;
+(elpy-enable)
+(elpy-use-ipython)
+(add-hook 'elpy-mode-hook 'py-yapf-enable-on-save)
