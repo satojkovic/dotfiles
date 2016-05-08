@@ -44,3 +44,15 @@
 (elpy-enable)
 (elpy-use-ipython)
 (add-hook 'elpy-mode-hook 'py-yapf-enable-on-save)
+(set-face-background 'highlight-indentation-face "#313131")
+(set-face-background 'highlight-indentation-current-column-face "#777777")
+(add-hook 'elpy-mode-hook 'highlight-indentation-current-column-mode)
+;; use flycheck
+(when (require 'flycheck nil t)
+  (remove-hook 'elpy-modules 'elpy-module-flymake)
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
+(define-key elpy-mode-map (kbd "C-c C-v") 'helm-flycheck)
+(require 'smartrep)
+(smartrep-define-key elpy-mode-map "C-c"
+  '(("C-n" . flycheck-next-error)
+    ("C-p" . flycheck-previous-error)))
