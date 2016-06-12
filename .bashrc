@@ -70,5 +70,6 @@ complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null \
 VERSION=$(pyenv version|awk '{print $1}')
 VER=$(pyenv version|awk -F. '{OFS=".";print $1,$2}')
 if [ -d "$HOME/.pyenv" ]; then
+	unset PYTHONPATH
 	export PYTHONPATH=$PYTHONPATH:$HOME/.pyenv/versions/$VERSION/lib/python$VER/site-packages:/usr/local/lib/python$VER/site-packages/
 fi
