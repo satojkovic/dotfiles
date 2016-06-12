@@ -47,6 +47,16 @@
 (set-face-background 'highlight-indentation-face "#313131")
 (set-face-background 'highlight-indentation-current-column-face "#777777")
 (add-hook 'elpy-mode-hook 'highlight-indentation-current-column-mode)
+(add-hook 'elpy-mode-hook
+          '(lambda ()
+             (define-key elpy-mode-map "\C-c\C-c" 'quickrun)
+             (auto-complete-mode -1)
+             (define-key company-active-map (kbd "\C-n") 'company-select-next)
+             (define-key company-active-map (kbd "\C-p") 'company-select-previous)
+             (define-key company-active-map (kbd "\C-d") 'company-show-doc-buffer)
+             (define-key company-active-map (kbd "<tab>") 'company-complete)
+             ))
+
 ;; use flycheck
 (when (require 'flycheck nil t)
   (remove-hook 'elpy-modules 'elpy-module-flymake)
