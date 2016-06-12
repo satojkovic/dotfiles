@@ -64,6 +64,9 @@
 (require 'linum)
 (global-linum-mode 1)
 
+;; display-time-mode
+(display-time-mode 1)
+
 ;;
 ;; フォント
 ;;
@@ -255,3 +258,6 @@
 ;; helm describe bindings
 (require 'helm-descbinds)
 (helm-descbinds-mode)
+
+;; elscreen
+(elscreen-start)
