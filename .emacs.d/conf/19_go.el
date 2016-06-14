@@ -28,10 +28,6 @@
 (setq gofmt-command "goimports")
 (add-hook 'before-save-hook 'gofmt-before-save)
 
-;; go-oracle
-(load-file "~/src/golang.org/x/tools/cmd/oracle/oracle.el")
-(go-oracle-mode)
-
 ;; flycheck
 (add-hook 'go-mode-hook 'flycheck-mode)
 
@@ -39,5 +35,3 @@
 (add-to-list 'load-path "~/src/github.com/golang/lint/misc/emacs")
 (require 'golint)
 
-;; go-stacktracer
-(require 'go-stacktracer)
