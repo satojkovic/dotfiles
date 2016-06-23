@@ -266,3 +266,9 @@
 (global-set-key "\C-cy" '(lambda ()
                            (interactive)
                            (popup-menu 'yank-menu)))
+
+;; smartrep
+(require 'smartrep)
+(smartrep-define-key
+    global-map "\C-x" '(("p" . 'git-gutter:previous-hunk)
+                        ("n" . 'git-gutter:next-hunk)))
