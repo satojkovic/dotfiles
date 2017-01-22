@@ -215,7 +215,6 @@
 ;;
 (require 'ido-occasional)
 (require 'ido-vertical-mode)
-(require 'helm-swoop)
 (require 'imenus)
 (setq ido-enable-flex-matching t)
 (ido-vertical-mode 1)
@@ -239,25 +238,9 @@
                (format "\\_<%s\\_>"
                        (regexp-quote (replace-regexp-in-string "^.*|" "" input)))))
 
-;;; C-M-sで関数呼び出しをhelm-multi-swoopできるようにした
-(push '(helm-multi-swoop . imenus-helm-multi-swoop) imenus-actions)
-(defun imenus-helm-multi-swoop (buffers input)
-  (helm-multi-swoop (replace-regexp-in-string "^.*|" "" input)
-                    (mapcar 'buffer-name buffers)))
-(define-key imenus-minibuffer-map (kbd "C-M-s") 'imenus-exit-to-helm-multi-swoop)
-(defun imenus-exit-to-helm-multi-swoop ()
-  "Exit from imenu prompt; start `helm-multi-swoop' with the current input."
-  (interactive)
-  (setq imenus-exit-status 'helm-multi-swoop)
-  (imenus-exit-minibuffer))
-
 ;; iedit
 (require 'iedit)
 (define-key global-map (kbd "C-c ;") 'iedit-mode)
-
-;; helm describe bindings
-(require 'helm-descbinds)
-(helm-descbinds-mode)
 
 ;; elscreen
 (elscreen-start)

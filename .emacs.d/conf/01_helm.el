@@ -9,7 +9,12 @@
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (helm-mode 1)
 
+(require 'helm-migemo)
 (require 'helm-swoop)
+(global-set-key (kbd "M-i") 'helm-swoop)
+(global-set-key (kbd "M-l") 'helm-swoop-last-point)
+(global-set-key (kbd "C-c M-i") 'helm-multi-swoop)
+(global-set-key (kbd "C-x M-i") 'helm-multi-swoop-all)
 
 (require 'helm-gtags)
 (add-hook 'c-mode-hook 'helm-gtags-mode)
@@ -24,3 +29,7 @@
 (autoload 'helm-go-package "helm-go-package")
 (eval-after-load 'go-mode
   '(substitute-key-definition 'go-import-add 'helm-go-package go-mode-map))
+
+;; helm describe bindings
+(require 'helm-descbinds)
+(helm-descbinds-mode)
