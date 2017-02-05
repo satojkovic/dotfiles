@@ -9,7 +9,8 @@
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (helm-mode 1)
 
-(require 'helm-migemo)
+;;(require 'helm-migemo)
+(helm-migemo-mode 1)
 (require 'helm-swoop)
 (global-set-key (kbd "M-i") 'helm-swoop)
 (global-set-key (kbd "M-l") 'helm-swoop-last-point)
