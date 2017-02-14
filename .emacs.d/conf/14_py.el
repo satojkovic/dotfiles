@@ -21,7 +21,7 @@
 (setq jedi:complete-on-dot t)
 (add-hook 'python-mode-hook
           '(lambda ()
-             (define-key python-mode-map (kbd "<C-S-return>") 'jedi:complete)))
+             (define-key python-mode-map (kbd "<C-s-return>") 'jedi:complete)))
 (setq jedi:tooltip-method 'nil)
 (set-face-attribute 'jedi:highlight-function-argument nil
                     :foreground "green")

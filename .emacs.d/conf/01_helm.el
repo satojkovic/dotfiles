@@ -34,3 +34,7 @@
 ;; helm describe bindings
 (require 'helm-descbinds)
 (helm-descbinds-mode)
+
+;; keybinds
+(define-key helm-map (kbd "C-h") 'delete-backward-char)
+(define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
