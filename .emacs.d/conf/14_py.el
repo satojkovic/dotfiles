@@ -29,15 +29,6 @@
 ;; flycheck
 (add-hook 'python-mode-hook 'flycheck-mode)
 
-;; electric-pair
-(add-hook 'python-mode-hook
-          '(lambda ()
-              (define-key python-mode-map "\"" 'electric-pair) ;;括弧の補完
-              (define-key python-mode-map "\'" 'electric-pair)
-              (define-key python-mode-map "(" 'electric-pair)
-              (define-key python-mode-map "[" 'electric-pair)
-              (define-key python-mode-map "{" 'electric-pair)))
-
 ;;
 ;; elpy
 ;;

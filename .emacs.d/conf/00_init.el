@@ -204,11 +204,8 @@
 (yas-global-mode 1)
 
 ;;対応する括弧を挿入
-(defun electric-pair ()
-  "Insert character pair without sournding spaces"
-  (interactive)
-  (let (parens-require-spaces)
-    (insert-pair)))
+(require 'smartparens-config)
+(smartparens-global-mode t)
 
 ;;
 ;; imenus
